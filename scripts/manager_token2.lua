@@ -1015,7 +1015,9 @@ function createSplatter(tokenCT,nodeCT,targetLayer)
 		tokenMap = imgCtlBackground.addToken(tokenproto, posX, posY);
 		-- we use the blood token's scale as it spawns within the grid + the image mod	
 		
-		Debug.console("token is now " .. tostring(tokenMap) .. ' maptoken scale is ' .. tokenMap.getScale()); 
+		-- I commented out the line below. It seemed to be throwing script errors:
+		-- "attempt to index local 'tokenMap' (a nil value)"
+		--Debug.console("token is now " .. tostring(tokenMap) .. ' maptoken scale is ' .. tokenMap.getScale()); 
 		if tokenMap then
 			local Ss,Is,Id;
 			posX, posY = tokenCT.getImageSize();
