@@ -1131,6 +1131,9 @@ function getConditionIconList(nodeCT, bSkipGMOnly)
 	table.sort(aSorted, function (a, b) return a.getName() < b.getName() end);
 
 	for k,v in pairs(aSorted) do
+		
+		local ignoreIcon = false;
+		
 		if DB.getValue(v, "isactive", 0) == 1 then
 			if (not bSkipGMOnly and User.isHost()) or (DB.getValue(v, "isgmonly", 0) == 0) then
 				local sLabel = DB.getValue(v, "label", "");
@@ -1144,6 +1147,16 @@ function getConditionIconList(nodeCT, bSkipGMOnly)
 				local aEffectComps = EffectManager.parseEffect(sLabel);
 				for kComp,sEffectComp in ipairs(aEffectComps) do
 					local vComp = EffectManager5E.parseEffectComp(sEffectComp);
+					
+					
+					--Debug.console("vComp"); 
+					--Debug.console(vComp); 
+					-- Check to see if "NOICON: " is part of the effect command.
+					-- If it is, we will ignoreIcon.
+					if vComp.type == "NOICON" then
+						ignoreIcon = true;
+					end
+					
 					-- CHECK CONDITIONALS
 					if vComp.type == "IF" then
 						if not EffectManager5E.checkConditional(rActor, v, vComp.remainder) then
@@ -1262,7 +1275,14 @@ function getConditionIconList(nodeCT, bSkipGMOnly)
 						sFinalLabel = sLabel;
 					end
 					
-					table.insert(aIconList, { sText = sFinalLabel, sIcon = sFinalIcon, sLabel = sLabel } );
+					--Debug.console("ignoreIcon"); 
+					--Debug.console(ignoreIcon); 
+					-- Only provide an icon if not ignoreIcon.
+					if ignoreIcon == false then
+						table.insert(aIconList, { sText = sFinalLabel, sIcon = sFinalIcon, sLabel = sLabel } );
+					end
+						
+					
 				end
 			end
 		end
