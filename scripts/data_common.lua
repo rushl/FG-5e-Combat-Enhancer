@@ -172,7 +172,9 @@ conditions = {
 	"stable", 
 	"stunned",
 	"turned",
-	"unconscious"
+	"unconscious",
+	"cover",
+	"scover"
 };
 
 -- Bonus/penalty effect types for token widgets
@@ -238,6 +240,8 @@ condcomps = {
 	["stunned"] = {"cond_stunned","","cond_stunned_more",""},
 	["turned"] = {"cond_turned","","cond_turned_more",""},
 	["unconscious"] = {"cond_unconscious","","cond_unconscious_more",""},
+	["cover"] = {"cond_cover","","cond_cover_more",""},
+	["scover"] = {"cond_scover","","cond_scover_more",""},
 };
 
 -- extra condition comps
