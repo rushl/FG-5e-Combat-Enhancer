@@ -9,7 +9,7 @@ function onInit()
 end
 
 function setupMenuItems(token)
-	token.registerMenuItem('Effects','effect_radial',4); 
+	token.registerMenuItem('Effects','effect_radial',2); 
 	token.onMenuSelection = onMenuSelection; 
 end
 
@@ -17,7 +17,7 @@ end
 function onMenuSelection(target, ...)
 	local topSelection = arg[1]; 
 	--Debug.console("selected an item! " .. tostring(topSelection)); 
-	if topSelection == 4 then
+	if topSelection == 2 then
 		wnd = Interface.findWindow('minieffects','effects');
 		if wnd then
 			--Debug.console("last: " .. tostring(lastContextToken) .. ' current: ' .. tostring(target)); 
