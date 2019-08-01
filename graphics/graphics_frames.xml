@@ -28,7 +28,7 @@
 	<!-- Combat tracker dark frames -->
 	<framedef name="ctentrybox_dark">
 		<bitmap file="graphics/frames/ctentrybox_dark.png" />
-		<offset>28,3,5,6</offset>
+		<offset>37,16,14,17</offset>
 	</framedef>
 	<framedef name="ctentrybox_active_dark">
 		<bitmap file="graphics/frames/ctentrybox_active_dark.png" />
