@@ -1,5 +1,7 @@
-# 5e-Combat-Enhancer
-A community extension I'm writing to improve 5e combat in Fantasy Grounds.
+# Combat Enhancer 5E Classic
+A community extension I've written to improve 5e combat in Fantasy Grounds for the original Fantasy Grounds.
+
+The FG Unity extension that carries over some of this functionality is found here: https://github.com/StyrmirThorarins/FG-5E-Enhancer
 
 Support thread: https://www.fantasygrounds.com/forums/showthread.php?47146-5e-Combat-Enhancer-(built-on-retired-GPL-Advanced-Kombat-extension)
 
@@ -262,3 +264,13 @@ v1.5.6 (July 6th, 2019) (patch)
 
 v1.5.7 (August 7th, 2019) (updated)
 * Updated version checking to check for FG v3.3.8 instead of previous v3.3.7. [scripts/manager_versionchk.lua]
+
+v1.5.8 (October 14th, 2019) (updated)
+* Disabled FG version checking. [extension.xml: <script name="VersionCheck" file="scripts/manager_versionchk.lua" />]
+
+v1.5.9 (December 4th, 2019) (patch)
+* Removing a target of an actor in a CT, by left-clicking the icon of the target, would cause an error. Fixed. [scripts/manager_targeting.lua: removeCTTargetEntry]
+
+v1.6.0 (March 12th, 2020) 
+* Extension made compatible with FGC v3.3.10.
+* Added load order.

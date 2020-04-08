@@ -20,12 +20,14 @@
 <root version="3.0" release="1">
 
 	<properties>
-		<name>5e Combat Enhancer</name>
-		<version>1.5.7</version>
+		<name>Combat Enhancer 5E Classic</name>
+		<version>1.6.0</version>
 		
 		<author>Styrmir T.</author>
-		<description>5e Combat Enhancer</description>
-		
+		<description>Combat Enhancer 5E Classic</description>
+
+		<loadorder>50</loadorder>
+
 		<ruleset>
 			<name>5E</name>
 			<!-- 
@@ -36,9 +38,11 @@
 
 			
 		<dependency>
-			<name>Core RPG - Token Helper</name>			
+			<name>Core RPG - Token Helper</name>
+			<!--
 			<minversion>1.1.4</minversion>
 			<maxversion>2.9.9</maxversion>			
+			-->
 		</dependency>
 
 		
@@ -77,7 +81,7 @@
 
 		<!-- Status icons -->
 		<icon name="ec_icon" file="icon.png" />		
-		<script name="VersionCheck" file="scripts/manager_versionchk.lua" />
+		<!-- <script name="VersionCheck" file="scripts/manager_versionchk.lua" /> -->
         <script name="TokenManager2" file="scripts/manager_token2.lua" />
         <script name="CombatManager2" file="scripts/manager_combat2.lua" />
 		<script name="DataCommon" file="scripts/data_common.lua" />
@@ -213,5 +217,5 @@
 		
 	</base>			
 
-	<announcement text="5e Combat Enhancer v1.5.7" font="emotefont" icon="ec_icon" />			
+	<announcement text="Combat Enhancer 5E Classic v1.6.0" font="emotefont" icon="ec_icon" />			
 </root>
